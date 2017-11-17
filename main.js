@@ -99,73 +99,75 @@ function answer(id, content) {
 var getQuestionInterval = setInterval(fecthQuestions, 5000);
 
 $("document").ready(function(){
+    setTimeout(function(){
+        var currentLocation = window.location.href;
+        var questionHtml = `
+        <div class="categoryFilterGroup" style="border-top: 4px solid rgb(72, 113, 191);">
+            <a id="ask-question">
+                <div class="categoryFilter" data-name="Commentary">
+                    <span class="he he">
+                        שאל שאלה
+                        <span class="enInHe questionArea">
+                            <form>
+                                <input type="hidden" id="questionDate" value="">
+                                <input type="hidden" id="questionUrl" value="${currentLocation}">
+                                <textarea class="questionText" rows="" cols="" placeholder="שאל שאלה על הקטע הנבחר"></textarea>
+                                <button type='submit'>שלח</button>
+                            </form>
+                        </span>
+                    </span> 
+                </div>
+            </a>
+        </div>
+        <div class="categoryFilterGroup" style="border-top: 4px solid rgb(72, 113, 191);">
+            <a id="ask-question">
+                <div class="categoryFilter" data-name="Commentary">
+                    <span class="he he">
+                        חברותא צ'אט
+                        <span class="enInHe questionArea">
+                            <div class="questionList">
+                                <ul class="questions-list">
+                                    טוען צ'אט שאלות אונליין, נא להמתין...
+                                </ul>
+                            </div>
+                        </span>
+                    </span> 
+                </div>
+            </a>
+        </div>`;
 
-    var currentLocation = window.location.href;
-    var questionHtml = `
-    <div class="categoryFilterGroup" style="border-top: 4px solid rgb(72, 113, 191);">
-        <a id="ask-question">
-            <div class="categoryFilter" data-name="Commentary">
-                <span class="he he">
-                    שאל שאלה
-                    <span class="enInHe questionArea">
-                        <form>
-                            <input type="hidden" id="questionDate" value="">
-                            <input type="hidden" id="questionUrl" value="${currentLocation}">
-                            <textarea class="questionText" rows="" cols="" placeholder="שאל שאלה על הקטע הנבחר"></textarea>
-                            <button type='submit'>שלח</button>
-                        </form>
-                    </span>
-                </span> 
-            </div>
-        </a>
-    </div>
-    <div class="categoryFilterGroup" style="border-top: 4px solid rgb(72, 113, 191);">
-        <a id="ask-question">
-            <div class="categoryFilter" data-name="Commentary">
-                <span class="he he">
-                    חברותא צ'אט
-                    <span class="enInHe questionArea">
-                        <div class="questionList">
-                            <ul class="questions-list">
-                                טוען צ'אט שאלות אונליין, נא להמתין...
-                            </ul>
-                        </div>
-                    </span>
-                </span> 
-            </div>
-        </a>
-    </div>`;
+        $(".contentInner > div > div > .categoryFilterGroup:first-child").before(questionHtml);
 
-    $(".contentInner > div > div > .categoryFilterGroup:first-child").before(questionHtml);
+        $("#ask-question").on("click", function(e){
+            var currentDate = new Date();
+            
+            $("#questionDate").val(currentDate);
+            return false;
+        });
 
-    $("#ask-question").on("click", function(e){
-        var currentDate = new Date();
-        
-        $("#questionDate").val(currentDate);
-        return false;
-    });
-
-    $(".questionList ul").delegate(".question-text .main-content-card", "click", function(){
-        console.log($(this));
-        if($(this).closest(".question-text").hasClass("open")) {
-            $(this).closest(".question-text").removeClass("open");
-            if (!$(this).closest(".card").siblings(".card").find(".question-text").hasClass("open")) {
-                getQuestionInterval = setInterval(fecthQuestions, 5000);
+        $(".questionList ul").delegate(".question-text .main-content-card", "click", function(){
+            console.log($(this));
+            if($(this).closest(".question-text").hasClass("open")) {
+                $(this).closest(".question-text").removeClass("open");
+                if (!$(this).closest(".card").siblings(".card").find(".question-text").hasClass("open")) {
+                    getQuestionInterval = setInterval(fecthQuestions, 5000);
+                }
+            } else {
+                clearInterval(getQuestionInterval);
+                $(this).closest(".question-text").addClass("open");
             }
-        } else {
-            clearInterval(getQuestionInterval);
-            $(this).closest(".question-text").addClass("open");
-        }
 
-    });
+        });
 
-    $(".contentInner").delegate(".ans-form", "submit", function(e){
-        e.preventDefault();
-        var ansContent = $(this).find(".answer").val();
-        var qId = $(this).data("q_id");
-        answer(qId, ansContent);
-        return false;
-    })
+        $(".contentInner").delegate(".ans-form", "submit", function(e){
+            e.preventDefault();
+            var ansContent = $(this).find(".answer").val();
+            var qId = $(this).data("q_id");
+            answer(qId, ansContent);
+            return false;
+        })
+    }, 2000);
+
 
 })
 
