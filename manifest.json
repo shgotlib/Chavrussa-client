@@ -12,8 +12,8 @@
   "content_scripts": [
       {
         "matches": ["https://www.sefaria.org/*", "https://www.sefaria.org.il/*"],
-        "js": ["jquery.js", "alertify.js", "main.js"],
-        "css": ["style.css", "alertify.css"]
+        "js": ["jquery.js", "alertify.js", "sweetalert2.js", "main.js"],
+        "css": ["style.css", "alertify.css", "sweetalert2.scc"]
       }
   ],
   "background": {
