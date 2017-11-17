@@ -93,7 +93,7 @@ function answer(id, content) {
     })
 }
 
-var getQuestionInterval = setInterval(fecthQuestions, 3000);
+var getQuestionInterval = setInterval(fecthQuestions, 5000);
 
 function addCode() {
     var currentLocation = window.location.href;
