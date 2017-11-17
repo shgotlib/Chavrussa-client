@@ -107,7 +107,7 @@ $("document").ready(function(){
                 <div class="categoryFilter" data-name="Commentary">
                     <span class="he he">
                         שאל שאלה
-                        <span class="enInHe questionArea">
+                        <span class="questionArea">
                             <form>
                                 <input type="hidden" id="questionDate" value="">
                                 <input type="hidden" id="questionUrl" value="${currentLocation}">
