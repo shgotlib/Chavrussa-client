@@ -62,7 +62,7 @@ function fecthQuestions(){
         method: "GET",
         cache: false,
         crossDomain: true,
-        url: "https://4870ee3b.ngrok.io/questions",
+        url: "https://d4be0aac.ngrok.io/questions",
         beforeSend: function(){
         },
         success: function(data) {
@@ -77,7 +77,7 @@ function answer(id, content) {
         method: "POST",
         cache: false,
         crossDomain: true,
-        url: "https://4870ee3b.ngrok.io/answer",
+        url: "https://d4be0aac.ngrok.io/answer",
         data: {
             answer: {
                 questionId: id,
@@ -150,7 +150,7 @@ function addCode() {
 
         var saveData = $.ajax({
             type: 'POST',
-            url: "https://4870ee3b.ngrok.io/question",
+            url: "https://d4be0aac.ngrok.io/question",
             data: JsonToSendData,
             dataType: "json",
             success: function (resultData) { questionId = resultData.id; }
@@ -199,7 +199,7 @@ $("document").ready(function(){
     var interval = setInterval(() => {
         if (!questionId) return;
         
-        $.get("https://4870ee3b.ngrok.io/answer?questionId="+questionId, function(data, status){
+        $.get("https://d4be0aac.ngrok.io/answer?questionId="+questionId, function(data, status){
             if(!data.answers || !data.answers.length) return;
             questionId = null;
             
