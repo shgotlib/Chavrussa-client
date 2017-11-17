@@ -92,8 +92,8 @@ function answer(id, content) {
         complete: buildTheList()
     })
 }
-
-var getQuestionInterval = setInterval(fecthQuestions, 2000);
+fecthQuestions();
+var getQuestionInterval = setInterval(fecthQuestions, 5000);
 
 function addCode() {
     var currentLocation = window.location.href;
