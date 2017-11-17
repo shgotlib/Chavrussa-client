@@ -1,0 +1,85 @@
+
+.questionArea textarea {
+    width: 100%;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.questionList ul.questions-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: Arial;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.questionList ul li.card {
+    margin: 10px 0;
+    display: flex;
+    z-index: 9999;
+}
+
+.questionList ul li.card .close {
+    display: flex;
+    flex: 1 1 20%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background: #ddd;
+    padding: 10px;
+    color: #555;
+}
+
+.close-btn, .q-before {
+    flex: 1 1 100%;
+}
+
+.close-btn {
+    border: 1px solid;
+    max-height: 20px;
+    min-height: 20px;
+    padding: 4px 3px 1px 3px;
+    display: inline-block;
+    min-width: 20px;
+    max-width: 20px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.q-before {
+    width: 50px;
+}
+
+.question-content {
+    display: flex;
+    flex: 1 1 80%;
+    padding: 10px;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: #777;
+    color: #fff;
+}
+
+.question-text {
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 10px;
+    height: 20px;
+    overflow: hidden;
+    transition: all 0.3 ease;
+}
+.question-text.open {
+    height: 100%;
+    overflow: hidden;
+}
+.answers-list {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.answers-list li.single-answer {
+    font-size: 14px;
+    margin-bottom: 10px;
+}

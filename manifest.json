@@ -1,0 +1,22 @@
+{
+  "name": "Chavrussa",
+  "manifest_version": 2,
+  "version": "0.1",
+  "description": "Social integration for Sefaria library.",
+  "icons": {
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus"
+  ],
+  "content_scripts": [
+      {
+        "matches": ["https://www.sefaria.org/*", "https://www.sefaria.org.il/*"],
+        "js": ["jquery.js", "main.js"],
+        "css": ["style.css"]
+      }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
