@@ -27,9 +27,9 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    background: #ddd;
+    background: rgba(72, 113, 191, 0.6);
     padding: 10px;
-    color: #555;
+    color: #000;
 }
 
 .close-btn, .q-before {
@@ -57,7 +57,7 @@
     padding: 10px;
     justify-content: flex-start;
     flex-direction: column;
-    background: #777;
+    background: rgb(72, 113, 191);
     color: #fff;
 }
 
@@ -82,4 +82,9 @@
 .answers-list li.single-answer {
     font-size: 14px;
     margin-bottom: 10px;
+}
+.submit-answer {
+    background: white;
+    border: none;
+    padding: 10px 15px;
 }

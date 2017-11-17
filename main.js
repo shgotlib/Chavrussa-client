@@ -49,7 +49,7 @@ function buildTheList() {
                             <button class="submit-answer">תגובה</button>
                         </form>
                     </span>
-                    <span class="question-source">בראשית א א</span>
+                    <span class="question-source">${questionList[i].location}</span>
                 </span>
             </li>
         `
@@ -92,7 +92,7 @@ function answer(id, content) {
         complete: buildTheList()
     })
 }
-
+fecthQuestions();
 var getQuestionInterval = setInterval(fecthQuestions, 5000);
 
 function addCode() {
