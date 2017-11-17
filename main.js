@@ -166,7 +166,7 @@ $("document").ready(function(){
             answer(qId, ansContent);
             return false;
         })
-    }, 2000);
+    }, 5000);
 
 
 })
