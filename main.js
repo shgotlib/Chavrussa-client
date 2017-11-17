@@ -105,7 +105,7 @@ $("document").ready(function(){
         <div class="categoryFilterGroup" style="border-top: 4px solid rgb(72, 113, 191);">
             <a id="ask-question">
                 <div class="categoryFilter" data-name="Commentary">
-                    <span class="he he">
+                    <span class="he he" style="display:block !important;">
                         שאל שאלה
                         <span class="questionArea">
                             <form>
@@ -122,7 +122,7 @@ $("document").ready(function(){
         <div class="categoryFilterGroup" style="border-top: 4px solid rgb(72, 113, 191);">
             <a id="ask-question">
                 <div class="categoryFilter" data-name="Commentary">
-                    <span class="he he">
+                    <span class="he he" style="display:block !important;">
                         חברותא צ'אט
                         <span class="enInHe questionArea">
                             <div class="questionList">
